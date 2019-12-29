@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+</head>
+<body>
+<div id="app">
+<h1>Add</h1>
+<form @submit.prevent="add_item">
+  label
+  <input type="text" v-model="name">
+  <button>Add</button>
+</form>
+</div>
+</body>
+</html>
+<script>
+  const Vue=require('vue/dist/vue');
+  const electron=require('electron');
+  const {ipcRenderer}=electron;
+  new Vue({
+    el:'#app',
+    data:{
+      name:'',
+    },
+    methods:{
+      add_item(){
+
+      }
+    }
+  })
+</script>
