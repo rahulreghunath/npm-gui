@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "Rahul <rahulreghunath11@gmail.com>",
   "description": "An electron-vue project",
-  "license": null,
+  "license": "MIT",
   "main": "dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -53,6 +53,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "electron": "^7.1.7",
+    "sequelize": "^5.21.5",
+    "sqlite3": "^4.1.1",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",
@@ -78,6 +80,7 @@
     "electron-builder": "^20.19.2",
     "electron-debug": "^1.5.0",
     "electron-devtools-installer": "^2.2.4",
+    "electron-rebuild": "^1.10.1",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "0.4.0",
