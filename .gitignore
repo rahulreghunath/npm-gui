@@ -1,5 +1,5 @@
 .DS_Store
-dist/electron/.gitkeep
+dist/electron/*
 dist/web/*
 build/*
 !build/icons
@@ -8,3 +8,6 @@ npm-debug.log
 npm-debug.log.*
 thumbs.db
 !.gitkeep
+.idea
+.electron-vue
+dist
