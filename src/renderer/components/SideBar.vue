@@ -9,7 +9,7 @@
         Projects
       </router-link>
 
-      <span class="nav-group-item" >
+      <span @click="add_project" class="nav-group-item">
                 <span class="icon icon-folder"></span>
                 Add Project
               </span>
@@ -42,8 +42,28 @@
 </template>
 
 <script>
+  import database from '../../database';
+  import { PouchDB } from 'rxdb';
+  import idb from 'pouchdb-adapter-idb';
+
+  PouchDB.plugin(idb);
   export default {
     name:'SideBar',
+    methods:{
+      async add_project(){
+        const db = await database.getDatabase(
+            'heroesdb',
+            'idb'
+        );
+        const obj = {
+          name: 'sdf',
+          color: 'red'
+        };
+        console.log('inserting hero:');
+        console.dir(obj);
+        db.heroes.insert(obj);
+      }
+    }
   };
 </script>
 

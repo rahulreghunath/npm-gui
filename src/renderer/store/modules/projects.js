@@ -1,5 +1,5 @@
 const state = {
-  projects:[]
+  projects:[{name:'sdf',path:'dfsd'}]
 };
 const getters={
   projects(state){
@@ -15,6 +15,7 @@ const mutations = {
 
 
 export default {
+  namespaced:true,
   state,
   mutations,
   getters

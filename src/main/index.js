@@ -1,4 +1,7 @@
 import { app, BrowserWindow } from 'electron';
+const { addRxPlugin } = require('rxdb');
+addRxPlugin(require('rxdb/plugins/server'));
+addRxPlugin(require('pouchdb-adapter-memory'));
 
 /**
  * Set `__static` path to static files in production

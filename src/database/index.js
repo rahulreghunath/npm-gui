@@ -1,12 +1,47 @@
-/**
- * Database (SQlite+Sequelize) configuration file
- */
-const Sequelize = require('sequelize');
+const {
+  createRxDatabase,
+  addRxPlugin
+} = require('rxdb');
+addRxPlugin(require('pouchdb-adapter-http'));
 
-const sqlite3 = require('sqlite3').verbose();
+const heroSchema = {
+  title: 'hero schema',
+  description: 'describes a simple hero',
+  version: 0,
+  type: 'object',
+  properties: {
+    name: {
+      type: 'string',
+      primary: true
+    },
+    color: {
+      type: 'string'
+    }
+  },
+  required: ['color']
+};
 
-module.exports = new Sequelize({
-  dialectModule: sqlite3,
-  dialect: 'sqlite',
-  storage: './database.sqlite'
-});
+let _getDatabase; // cached
+function getDatabase(name, adapter) {
+  if (!_getDatabase) _getDatabase = createDatabase(name, adapter);
+  return _getDatabase;
+}
+
+async function createDatabase(name, adapter) {
+  const db = await createRxDatabase({
+    name,
+    adapter,
+    password: 'myLongAndStupidPassword'
+  });
+
+  console.log('creating hero-collection..');
+  await db.collection({
+    name: 'heroes',
+    schema: heroSchema
+  });
+
+  return db;
+}
+export default {
+  getDatabase
+};

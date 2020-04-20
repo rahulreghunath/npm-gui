@@ -53,13 +53,17 @@
   "dependencies": {
     "axios": "^0.18.0",
     "electron": "^7.1.7",
+    "pouchdb-adapter-http": "^7.2.1",
+    "pouchdb-adapter-idb": "^7.2.1",
+    "pouchdb-adapter-memory": "^7.2.1",
+    "rxdb": "^9.0.0-beta.1",
     "sequelize": "^5.21.5",
     "sqlite3": "^4.1.1",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "vuex-electron": "^1.0.0"
+    "vuex-electron": "^1.0.3"
   },
   "devDependencies": {
     "ajv": "^6.5.0",
