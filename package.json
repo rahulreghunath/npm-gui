@@ -51,7 +51,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "electron": "^7.2.4",
     "pouchdb-adapter-http": "^7.2.1",
     "pouchdb-adapter-idb": "^7.2.1",
